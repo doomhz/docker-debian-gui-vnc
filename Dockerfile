@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     vim \
     less \
     curl \
+    wget \
     --no-install-recommends \
     && apt-get install -y \
       supervisor sudo net-tools \
