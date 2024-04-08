@@ -1,0 +1,14 @@
+version: '3.8'
+name: virtdeb
+services:
+  debian-lxqt-vnc:
+    build: .
+    image: debian-lxqt-vnc:latest
+    ports:
+      - "5900:5900"
+    volumes:
+      - ./shared:/root/shared
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+      - VNC_PASSWORD=${VNC_PASSWORD}
+    restart: unless-stopped
